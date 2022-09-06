@@ -1,5 +1,6 @@
-set version=%1
-set vc=%2
+set type=%1
+set version=%2
+set vc=%3
 
 set version=%version:"=%
 set vc=%vc:"=%

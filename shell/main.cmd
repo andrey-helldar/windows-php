@@ -1,13 +1,14 @@
-set version=%1
-set vc=%2
-set action=%3
+set type=%1
+set version=%2
+set vc=%3
+set action=%4
 
 set cleanVersion=%version:.=%
 
 set phpPath=%modulesPath%\php%cleanVersion%
 
 if /I %action%=="update" (
-    call php-download.cmd %version% %vc%
+    call php-download.cmd %type% %version% %vc%
 )
 
-call php-only.cmd %version% %vc%
+call php-only.cmd %type% %version% %vc%

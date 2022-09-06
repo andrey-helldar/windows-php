@@ -4,4 +4,4 @@ cd ..\..\shell
 
 call variables.cmd
 
-call main.cmd "8.0" "vs16" "update"
+call main.cmd "latest" "8.0" "vs16" "update"
