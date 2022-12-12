@@ -3,16 +3,16 @@ set version=%2
 set vc=%3
 
 set version=%version:"=%
+set minorVersion=%version:"=%
 set vc=%vc:"=%
 
-IF (%version%=="7.4.33") (
+set xdebugVersion=3.2.0
+set redisVersion=5.3.7
+set yamlVersion=2.2.2
+    
+if /I %version%==7.4.32 (
     set xdebugVersion=3.1.5
-    set redisVersion=5.3.7
-    set yamlVersion=2.2.2
-) ELSE (
-    set xdebugVersion=3.2.0
-    set redisVersion=5.3.7
-    set yamlVersion=2.2.2
+    set minorVersion=7.4
 )
 
 set tmp=%mainPath%\data\tmp
