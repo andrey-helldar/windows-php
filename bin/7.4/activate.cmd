@@ -4,4 +4,4 @@ cd ..\..\shell
 
 call variables.cmd
 
-call php-only.cmd "7.4" "vc15"
+call php-only.cmd "archives" "7.4.32" "vc15"

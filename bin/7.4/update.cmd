@@ -4,4 +4,4 @@ cd ..\..\shell
 
 call variables.cmd
 
-call main.cmd "7.4" "vc15" "update"
+call main.cmd "archives" "7.4.32" "vc15" "update"

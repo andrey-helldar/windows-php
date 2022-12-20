@@ -1,12 +1,19 @@
-set version=%1
-set vc=%2
+set type=%1
+set version=%2
+set vc=%3
 
 set version=%version:"=%
+set minorVersion=%version:"=%
 set vc=%vc:"=%
 
-set xdebugVersion=3.1.5
+set xdebugVersion=3.2.0
 set redisVersion=5.3.7
 set yamlVersion=2.2.2
+    
+if /I %version%==7.4.32 (
+    set xdebugVersion=3.1.5
+    set minorVersion=7.4
+)
 
 set tmp=%mainPath%\data\tmp
 

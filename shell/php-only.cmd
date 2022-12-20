@@ -1,5 +1,6 @@
-set version=%1
-set vc=%2
+set type=%1
+set version=%2
+set vc=%3
 
 set cleanVersion=%version:.=%
 
@@ -12,7 +13,7 @@ set phpPath=%modulesPath%\php%cleanVersion%
 rd %modulesPath%\php
 
 if not exist %phpPath% (
-    call php-download.cmd %version% %vc%
+    call php-download.cmd %type% %version% %vc%
 )
 
 call cacert.cmd
