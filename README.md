@@ -2,6 +2,13 @@
 
 <img src="https://preview.dragon-code.pro/andrey-helldar/windows-php.svg?brand=php" alt="Windows PHP"/> 
 
+## PHP versions
+
+* 8.2 (without `redis`, `yaml` and `pdo_sqlsrv` extensions)
+* 8.1
+* 8.0
+* 7.4
+
 ## Directory structure
 
 - **your_folder**
