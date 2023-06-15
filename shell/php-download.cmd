@@ -12,11 +12,6 @@ set yamlVersion=2.2.2
 set sqlsrvVersion=5.10.0
 set imagickVersion=3.7.0
 set xdiffVersion=2.1.0
-    
-if /I %version%==7.4.32 (
-    set xdebugVersion=3.1.5
-    set minorVersion=7.4
-)
 
 set tmp=%mainPath%\data\tmp
 

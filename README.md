@@ -7,7 +7,6 @@
 * 8.2 (without `redis`, `yaml` and `pdo_sqlsrv` extensions)
 * 8.1
 * 8.0
-* 7.4
 
 ## Directory structure
 
@@ -34,7 +33,8 @@ When downloading PHP, the script will also download and install the `php_redis`,
 
 ## Using
 
-1. Specify the link to the PHP folder in the environment variables. For example, `c:\dev\modules\php` (this is a symlink in PHP).
+1. Specify the link to the PHP folder in the environment variables. For example, `c:\dev\modules\php` (this is a symlink
+   in PHP).
 2. Create links to the files you need from the `bin` folder in a place convenient for you.
 3. Run the links you need and use 😊
 
