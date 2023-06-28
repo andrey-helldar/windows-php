@@ -21,6 +21,8 @@ if exist %phpPath% ( rmdir /Q/S %phpPath% )
 if not exist %tmp% ( mkdir %tmp% )
 
 call download/php.cmd
+call php-config.cmd %cleanVersion%
+
 call download/imagick.cmd
 call download/redis.cmd
 call download/sqlsrv.cmd
@@ -28,6 +30,5 @@ call download/xdebug.cmd
 call download/xdiff.cmd
 call download/yaml.cmd
 
-call php-config.cmd %cleanVersion%
 
 if exist %tmp% ( rmdir /Q/S %tmp% )
