@@ -7,7 +7,6 @@ set minorVersion=%version:"=%
 set vc=%vc:"=%
 
 set xdebugVersion=3.2.1
-set yamlVersion=2.2.2
 
 set tmp=%mainPath%\data\tmp
 
@@ -22,7 +21,6 @@ call php-config.cmd %cleanVersion%
 call download/imagick.cmd
 call download/redis.cmd
 call download/xdebug.cmd
-call download/yaml.cmd
 
 
 if exist %tmp% ( rmdir /Q/S %tmp% )
