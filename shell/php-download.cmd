@@ -11,7 +11,6 @@ set redisVersion=5.3.7
 set yamlVersion=2.2.2
 set sqlsrvVersion=5.10.0
 set imagickVersion=3.7.0
-set xdiffVersion=2.1.0
 
 set tmp=%mainPath%\data\tmp
 
@@ -27,7 +26,6 @@ call download/imagick.cmd
 call download/redis.cmd
 call download/sqlsrv.cmd
 call download/xdebug.cmd
-call download/xdiff.cmd
 call download/yaml.cmd
 
 
