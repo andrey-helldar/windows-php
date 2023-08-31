@@ -4,7 +4,7 @@
 
 ## PHP versions
 
-* 8.2 (without `redis`, `yaml` and `pdo_sqlsrv` extensions)
+* 8.2
 * 8.1
 * 8.0
 
