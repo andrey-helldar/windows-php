@@ -1,5 +1,7 @@
 .idea
 
+data/
+
 repository/.git
 repository/.vscode
 repository/.github
