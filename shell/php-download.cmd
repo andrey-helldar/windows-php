@@ -21,6 +21,7 @@ call php-config.cmd %cleanVersion%
 call download/imagick.cmd
 call download/redis.cmd
 call download/xdebug.cmd
+call download/rdkafka.cmd
 
 
 if exist %tmp% ( rmdir /Q/S %tmp% )
