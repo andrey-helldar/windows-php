@@ -7,6 +7,7 @@
 * 8.4
 * 8.3
 * 8.2
+* 7.4
 
 ## Directory structure
 

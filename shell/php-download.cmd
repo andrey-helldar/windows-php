@@ -8,6 +8,11 @@ set vc=%vc:"=%
 
 set xdebugVersion=3.4.0beta1
 
+if /I %version%==7.4.33 (
+    set xdebugVersion=3.1.5
+    set minorVersion=7.4
+)
+
 set tmp=%mainPath%\data\tmp
 
 if exist %tmp% ( rmdir /Q/S %tmp% )
@@ -18,14 +23,12 @@ if not exist %tmp% ( mkdir %tmp% )
 call download/php.cmd
 call php-config.cmd %cleanVersion%
 
-if /I %version%=="8.4" (
+if /I %version%==8.4 (
     call download/xdebug.cmd
 ) else (
     call download/imagick.cmd
     call download/redis.cmd
     call download/xdebug.cmd
 )
-
-pause
 
 if exist %tmp% ( rmdir /Q/S %tmp% )
