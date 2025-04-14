@@ -24,11 +24,9 @@ call download/php.cmd
 call php-config.cmd %cleanVersion%
 
 if /I %version%==8.4 (
-    call download/grpc.cmd
     call download/redis.cmd
     call download/xdebug.cmd
 ) else (
-    call download/grpc.cmd
     call download/imagick.cmd
     call download/redis.cmd
     call download/xdebug.cmd
