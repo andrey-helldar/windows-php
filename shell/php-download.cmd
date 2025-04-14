@@ -6,7 +6,7 @@ set version=%version:"=%
 set minorVersion=%version:"=%
 set vc=%vc:"=%
 
-set xdebugVersion=3.4.1
+set xdebugVersion=3.4.2
 
 if /I %version%==7.4.33 (
     set xdebugVersion=3.1.5
