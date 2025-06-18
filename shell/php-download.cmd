@@ -26,10 +26,15 @@ call php-config.cmd %cleanVersion%
 if /I %version%==8.4 (
     call download/redis.cmd
     call download/xdebug.cmd
+    call download/rdkafka.cmd
+) else if /I %version%==7.4.33 (
+    call download/imagick.cmd
+    call download/redis.cmd
 ) else (
     call download/imagick.cmd
     call download/redis.cmd
     call download/xdebug.cmd
+    call download/rdkafka.cmd
 )
 
 if exist %tmp% ( rmdir /Q/S %tmp% )
