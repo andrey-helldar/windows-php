@@ -1,0 +1,6 @@
+powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?(max_execution_time)\s?=(.*)', '$1 = %php_max_execution_time%' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
+powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?(max_input_time)\s?=(.*)', '$1 = %php_max_input_time%' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
+powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?(memory_limit)\s?=(.*)', '$1 = %php_memory_limit%' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
+powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?(post_max_size)\s?=(.*)', '$1 = %php_post_max_size%' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
+powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?(extension_dir)\s?=(.*)', '$1 = %php_extension_dir%' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
+powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?(upload_max_filesize)\s?=(.*)', '$1 = %php_upload_max_filesize%' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
