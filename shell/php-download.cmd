@@ -22,6 +22,7 @@ if not exist %tmp% ( mkdir %tmp% )
 
 call download/php.cmd
 call php-config.cmd %cleanVersion%
+call php-setup.cmd
 
 if /I %version%==8.4 (
     call download/redis.cmd

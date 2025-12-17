@@ -17,6 +17,5 @@ if not exist %phpPath% (
 )
 
 call cacert.cmd
-call php-setup.cmd
 
 mklink /J %modulesPath%\php %modulesPath%\php%cleanVersion%
