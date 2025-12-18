@@ -6,23 +6,8 @@ powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?(upload_max_fil
 
 powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?(extension_dir)\s?=(.*)', '$1 = \"%php_extension_dir%\"' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
 
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=bz2', 'extension=bz2' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=curl', 'extension=curl' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=fileinfo', 'extension=fileinfo' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=gd', 'extension=gd' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=intl', 'extension=intl' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=ldap', 'extension=ldap' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=mbstring', 'extension=mbstring' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=odbc', 'extension=odbc' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=openssl', 'extension=openssl' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=pdo_mysql', 'extension=pdo_mysql' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=pdo_pgsql', 'extension=pdo_pgsql' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=pdo_sqlite', 'extension=pdo_sqlite' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=pgsql', 'extension=pgsql' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=soap', 'extension=soap' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=sockets', 'extension=sockets' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=sqlite3', 'extension=sqlite3' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=xsl', 'extension=xsl' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';extension=zip', 'extension=zip' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
+powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?zend_extension\s?=\s?opcache.*', 'zend_extension=opcache' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
 
-powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';zend_extension=opcache', 'zend_extension=opcache' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
+for %%i in (%php_extensions%) do (
+    powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?extension\s?=\s?%%i.*', 'extension=%%i' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
+)
