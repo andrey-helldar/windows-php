@@ -31,7 +31,8 @@
     bin/X.X/update.cmd    - Sets the required PHP version by default.
                               A fresh version of PHP will be forcibly downloaded and installed.
 
-When downloading PHP, the script will also download and install the `php_redis`, `php_yaml` and `php_xdebug` extensions.
+When downloading PHP, the script will also download and install the `php_redis`, `php_xdebug`, `imagick` and `rdkafka`
+extensions.
 
 ## Using
 
