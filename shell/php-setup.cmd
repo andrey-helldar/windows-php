@@ -11,3 +11,7 @@ powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?zend_extension\
 for %%i in (%php_extensions%) do (
     powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?extension\s?=\s?%%i.*', 'extension=%%i' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
 )
+
+for %%i in (%php_dynamic_extensions%) do (
+    powershell -Command "(Get-Content %phpPath%\php.ini) -replace '(zend_extension=opcache)', 'extension=%%i\\n\\nzend_extension=opcache' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
+)
