@@ -7,11 +7,13 @@ powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?(upload_max_fil
 powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?(extension_dir)\s?=(.*)', '$1 = \"%php_extension_dir%\"' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
 
 powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?zend_extension\s?=\s?opcache.*', 'zend_extension=opcache' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
+powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?opcache.enable\s?=\s?\d+', 'opcache.enable=1' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
+powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?opcache.enable_cli\s?=\s?\d+', 'opcache.enable_cli=1' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
 
 for %%i in (%php_extensions%) do (
     powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?extension\s?=\s?%%i.*', 'extension=%%i' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
 )
 
 for %%i in (%php_dynamic_extensions%) do (
-    powershell -Command "(Get-Content %phpPath%\php.ini) -replace '(zend_extension=opcache)', \"extension=%%i`n`nzend_extension=opcache\" | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
+    powershell -Command "(Get-Content %phpPath%\php.ini) -replace '(extension=zip)', \"extension=zip`n`nextension=%%i\" | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
 )
