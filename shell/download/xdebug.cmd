@@ -6,7 +6,7 @@ powershell -Command "Invoke-WebRequest https://xdebug.org/files/php_xdebug-%xdeb
 
 powershell -Command "(Get-Content %phpPath%\php.ini) -replace ';?(xdebug\.output_dir)\s?=(.*)', '$1 = \"%xdebugProfilerDir%\"' | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
 
-powershell -Command "(Get-Content %phpPath%\php.ini) + \"`nzend_extension=xdebug`nxdebug.mode=debug,develop,profile,coverage`nxdebug.start_with_request=yes`nxdebug.client_host=127.0.0.1`nxdebug.client_port=9003\" | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
+powershell -Command "(Get-Content %phpPath%\php.ini) + \"`nzend_extension=xdebug`nxdebug.mode=debug,develop,profile,coverage`nxdebug.start_with_request=no`nxdebug.client_host=127.0.0.1`nxdebug.client_port=9003\" | Out-File -Encoding \"UTF8\" %phpPath%\php.ini"
 
 if not exist "%xdebugProfilerDir%" ( mkdir "%xdebugProfilerDir%" )
 
