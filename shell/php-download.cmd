@@ -6,7 +6,7 @@ set version=%version:"=%
 set minorVersion=%version:"=%
 set vc=%vc:"=%
 
-set xdebugVersion=3.5.0
+set xdebugVersion=3.5.1
 
 if /I %version%==7.4.33 (
     set xdebugVersion=3.1.5
@@ -24,11 +24,7 @@ call download/php.cmd
 call php-config.cmd %cleanVersion%
 call php-setup.cmd
 
-if /I %version%==8.4 (
-    call download/redis.cmd
-    call download/xdebug.cmd
-    call download/rdkafka.cmd
-) else if /I %version%==7.4.33 (
+if /I %version%==7.4.33 (
     call download/imagick.cmd
     call download/redis.cmd
 ) else (
