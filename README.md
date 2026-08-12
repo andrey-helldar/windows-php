@@ -1,7 +1,5 @@
 # Windows PHP Helper
 
-<img src="https://preview.dragon-code.pro/andrey-helldar/windows-php.svg?brand=php" alt="Windows PHP"/> 
-
 ## PHP versions
 
 * 8.5
