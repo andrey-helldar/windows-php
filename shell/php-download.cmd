@@ -6,7 +6,7 @@ set version=%version:"=%
 set minorVersion=%version:"=%
 set vc=%vc:"=%
 
-set xdebugVersion=3.5.1
+set xdebugVersion=3.5.3
 
 set tmp=%mainPath%\data\tmp
 
