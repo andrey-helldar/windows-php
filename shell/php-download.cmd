@@ -8,11 +8,6 @@ set vc=%vc:"=%
 
 set xdebugVersion=3.5.1
 
-if /I %version%==7.4.33 (
-    set xdebugVersion=3.1.5
-    set minorVersion=7.4
-)
-
 set tmp=%mainPath%\data\tmp
 
 if exist %tmp% ( rmdir /Q/S %tmp% )
@@ -24,14 +19,9 @@ call download/php.cmd
 call php-config.cmd %cleanVersion%
 call php-setup.cmd
 
-if /I %version%==7.4.33 (
-    call download/imagick.cmd
-    call download/redis.cmd
-) else (
-    call download/imagick.cmd
-    call download/redis.cmd
-    call download/xdebug.cmd
-    call download/rdkafka.cmd
-)
+call download/imagick.cmd
+call download/redis.cmd
+call download/xdebug.cmd
+call download/rdkafka.cmd
 
 if exist %tmp% ( rmdir /Q/S %tmp% )
